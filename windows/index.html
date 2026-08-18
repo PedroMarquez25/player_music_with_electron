@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" /> -->
+   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src 'self' data:;" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src 'self' data:;" />
+  <title>Home</title>
+  <link rel="stylesheet" href="../styles/home.css">
+</head>
+
+<body class="container-windows">
+  <div class="container">
+    <div class="menu-lateral">
+      <div class="item-menu">
+        <p class="title-menu">RealPlayer</p>
+      </div>
+      <div class="item-menu">
+        <p class="title-item">Inicio</p>
+      </div>
+      <div class="item-menu">
+        <p class="title-item">Setting</p>
+      </div>
+      <div class="item-menu">
+        <p class="title-item ">About</p>
+      </div>
+    </div>
+    <div class="container-main">
+      <p class="title-home">Lista de canciones</p>
+      <div class="lista-canciones" id="lista_canciones">
+          <ul id="lista">
+            <li></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="barra-reproductor">
+      <img src="../assets/Iron-man-endgame.jpg" alt="" id="caratula" class="caratula">
+      <div class="reproduccion">
+        <audio class="audio" id="audio" src="" controls></audio>
+        <div class="btns">
+          <button class="btnBack" id="btnBack">back</button>
+          <button class="btnStop" id="btnStop">stop</button>
+          <button class="btnNext" id="btnNext">next</button>
+        </div>
+      </div>
+  </div>
+  
+</body>
+<!-- <script src="../scripts/renderer.js"></script> -->
+<script src="../scripts/renderer_modificado.js"></script>
+
+</html>
