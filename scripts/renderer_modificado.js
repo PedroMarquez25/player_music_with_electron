@@ -1,9 +1,11 @@
+
 const listaHTML = document.getElementById('lista');
 const audioElement = document.getElementById('audio')
 const btnNext = document.getElementById('btnNext')
 const btnStop = document.getElementById('btnStop')
 const btnBack = document.getElementById('btnBack')
 const imgReproductor = document.getElementById('caratula')
+const titleReproductor = document.getElementById('title_reproductor_music')
 
 let postMusicSelected = 0
 let lengthCircularList = 0
@@ -27,10 +29,11 @@ const changeMusic = (pos = 0, click = false) =>{
     listaMusic[postMusicSelected].element.classList.remove("active")
     listaMusic[pos].element.classList.add('active')
     imgReproductor.src = listaMusic[pos].meta.image
+    titleReproductor.innerText = listaMusic[pos].meta.title
     postMusicSelected = pos
     
     if(click) {
-      btnStop.innerText = "stop"
+      btnStop.innerHTML = window.api.Icons.STOP
       stop = true
     }
 }
@@ -48,13 +51,15 @@ const backMusic = (event) =>{
 }
 
 const togleMusicAudio = (event) =>{
+   
     stop = !stop
     if(stop){
-       event.target.innerText = "stop"
+       btnStop.innerHTML = window.api.Icons.STOP
        audioElement.play()
     }
     else {
-      event.target.innerText = "play"
+      
+       btnStop.innerHTML =  window.api.Icons.PLAY
       audioElement.pause()
     }
 }
@@ -114,3 +119,7 @@ btnNext.addEventListener("click", nextMusic)
 btnStop.addEventListener('click',togleMusicAudio)
 btnBack.addEventListener('click', backMusic)
 audioElement.addEventListener("ended", nextMusic)
+
+btnStop.innerHTML = window.api.Icons.STOP
+btnNext.innerHTML = window.api.Icons.NEXT
+btnBack.innerHTML = window.api.Icons.BACK

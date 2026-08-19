@@ -12,45 +12,55 @@
 </head>
 
 <body class="container-windows">
+  
+
   <div class="container">
+
     <div class="menu-lateral">
-      <div class="item-menu">
-        <p class="title-menu">RealPlayer</p>
+      <div class="item-title">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(229, 147, 34)" d="M91.2 36.9c-12.4-6.8-27.4-6.5-39.6 .7S32 57.9 32 72l0 368c0 14.1 7.5 27.2 19.6 34.4s27.2 7.5 39.6 .7l336-184c12.8-7 20.8-20.5 20.8-35.1s-8-28.1-20.8-35.1l-336-184z"/></svg>
+        <p class="title-menu">RP</p>
+        <!-- <p class="title-menu">RealPlayer</p> -->
       </div>
-      <div class="item-menu">
-        <p class="title-item">Inicio</p>
-      </div>
-      <div class="item-menu">
-        <p class="title-item">Setting</p>
-      </div>
-      <div class="item-menu">
-        <p class="title-item ">About</p>
-      </div>
+      <button class="item-menu">
+        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(255, 255, 255)" d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272l16 0 0 176c0 35.3 28.7 64 64 64l288 0c35.3 0 64-28.7 64-64l0-176 16 0c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1l-224-208zM240 320l32 0c26.5 0 48 21.5 48 48l0 96-128 0 0-96c0-26.5 21.5-48 48-48z"/></svg>
+        <p class="title-item">Home</p>
+      </button>
+      <button class="item-menu  item-active">
+        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(255, 255, 255)" d="M468 7c7.6 6.1 12 15.3 12 25l0 304c0 44.2-43 80-96 80s-96-35.8-96-80 43-80 96-80c11.2 0 22 1.6 32 4.6l0-116.7-224 49.8 0 206.3c0 44.2-43 80-96 80s-96-35.8-96-80 43-80 96-80c11.2 0 22 1.6 32 4.6L128 96c0-15 10.4-28 25.1-31.2l288-64c9.5-2.1 19.4 .2 27 6.3z"/></svg>
+        <p class="title-item">Canciones</p>
+      </button>
     </div>
+
     <div class="container-main">
       <p class="title-home">Lista de canciones</p>
       <div class="lista-canciones" id="lista_canciones">
           <ul id="lista">
-            <li></li>
           </ul>
       </div>
     </div>
+
   </div>
 
   <div class="barra-reproductor">
         <audio class="audio" id="audio" src="" controls></audio>
         <div class="botton-btns">
-          <img src="../assets/Iron-man-endgame.jpg" alt="" id="caratula" class="caratula">
+          <div class="container-caratula">
+            <img src="../assets/Iron-man-endgame.jpg" alt="" id="caratula" class="caratula">
+            <p class="title-reproductor-music" id="title_reproductor_music"></p>
+          </div>
           <div class="btns">
             <button class="btnBack" id="btnBack">back</button>
-            <button class="btnStop" id="btnStop">stop</button>
+            <button class="btnStop" id="btnStop"></button>
             <button class="btnNext" id="btnNext">next</button>
+          </div>
+          <div class="btns-adicionales">
           </div>
       </div>
   </div>
   
 </body>
-<!-- <script src="../scripts/renderer.js"></script> -->
+
 <script src="../scripts/renderer_modificado.js"></script>
 
 </html>
