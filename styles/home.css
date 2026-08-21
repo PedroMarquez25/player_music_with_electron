@@ -18,7 +18,8 @@
     background-color: var(--background-primary);
     height: 100vh;
     width: 100vw;
-    overflow:hidden;}
+    overflow:hidden;
+}
 
 .container{
     width: 100%;
@@ -36,7 +37,7 @@
     padding-left: 16px;
     padding-right: 16px;}
 
-.title-home{
+.title-selected{
     color: var(--text_color);
     margin-top: 10px;
     margin-bottom: 5px;
@@ -100,87 +101,6 @@
     padding-left: 16px;
     padding-top: 15px;
     padding-bottom: 15px;
-}
-
-
-
-
-
-
-
-
-
-
-/* Lista de canciones */
-
-.lista-canciones{
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-secondary);
-    border-radius: 8px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-   
-
-    /* Ancho del scroll vertical y alto del horizontal */
-    &::-webkit-scrollbar {
-        width: 8px; 
-    }
-    /* Color de fondo de la pista */
-    &::-webkit-scrollbar-track {
-        background: var(--background-secondary);
-        border-radius: 4px;
-    }
-    /* Color y estilo de la barra deslizante */
-    &::-webkit-scrollbar-thumb {
-        background: var(--color_menu_lateral);
-        border-radius: 4px;
-    }
-
-    /* Color de la barra cuando se pasa el cursor */
-    &::-webkit-scrollbar-thumb:hover {
-        background: #a8a8a8;
-    }
-}
-
-.item-lista{
-    list-style: none;
-    color: white;
-
-    width: 100%;
-    padding: 10px;
-    height: 50px;
-
-    display: flex;
-    gap: 20px;
-
-    &:hover{
-        background-color: var(--color_menu_lateral);
-        cursor: pointer;
-    }
-}
-
-.item-par{
-    background-color: var(--background-primary);
-}
-
-
-.active{
-    color: var(--resaltado);
-}
-
-.target-music-title{
-    width: 60%;
-    white-space: nowrap;       /* Evita que el texto baje de línea */
-    overflow: hidden;          /* Oculta lo que sobresale */
-    text-overflow: ellipsis;   /* Añade los puntos suspensivos (...) */
-}
-
-.target-music{
-    width: 15%;
-    white-space: nowrap;       /* Evita que el texto baje de línea */
-    overflow: hidden;          /* Oculta lo que sobresale */
-    text-overflow: ellipsis;   
 }
 
 
@@ -252,6 +172,12 @@
     align-items: center;
     gap: 10px;
     padding-left: 5px;
+    padding-right: 5px;
+
+    &:hover{
+        background-color: var(--resaltado);
+        cursor: pointer;
+    }
 }
 
 .caratula{
@@ -278,3 +204,144 @@
 }
 
 
+/* PANTALLAS */
+
+.container-hide{
+    display: none;
+}
+/* Lista de canciones */
+
+.container-lista-canciones{
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+   
+
+    /* Ancho del scroll vertical y alto del horizontal */
+    &::-webkit-scrollbar {
+        width: 8px; 
+    }
+    /* Color de fondo de la pista */
+    &::-webkit-scrollbar-track {
+        background: var(--background-secondary);
+        border-radius: 4px;
+    }
+    /* Color y estilo de la barra deslizante */
+    &::-webkit-scrollbar-thumb {
+        background: var(--color_menu_lateral);
+        border-radius: 4px;
+    }
+
+    /* Color de la barra cuando se pasa el cursor */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
+}
+
+.item-lista{
+    list-style: none;
+    color: white;
+
+    width: 100%;
+    padding: 10px;
+    height: 50px;
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    &:hover{
+        background-color: var(--color_menu_lateral);
+        cursor: pointer;
+    }
+}
+
+.item-par{
+    background-color: var(--background-primary);
+}
+
+.active{
+    color: var(--resaltado);
+}
+
+.target-music-title{
+    width: 60%;
+    white-space: nowrap;       /* Evita que el texto baje de línea */
+    overflow: hidden;          /* Oculta lo que sobresale */
+    text-overflow: ellipsis;   /* Añade los puntos suspensivos (...) */
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.target-music{
+    width: 15%;
+    white-space: nowrap;       /* Evita que el texto baje de línea */
+    overflow: hidden;          /* Oculta lo que sobresale */
+    text-overflow: ellipsis; 
+     font-size: 14px;  
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* Home */
+
+.home-container{
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* Expandir barra reproductor */
+.expandir-barra{
+    width: 100%;
+    height: 100%;
+}
+
+.container-caratula-expandida{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.caratula-expandida{
+    height: 300px;
+    width: 500px;
+    object-fit: cover;
+    margin-top: 32px;
+}
+
+.title-reproductor-music-expandido{
+    font-size: 25px;
+    padding: 40px;
+    color: var(--text_color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.btn-hide-reproductor{
+    align-self: flex-start;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    cursor: pointer;
+}
+
+.botton-btns-expandidos{
+    display: flex;
+    align-items: center; /* Centra verticalmente la carátula y los botones */
+    justify-content: center; /* Empuja la carátula a la izquierda y los botones a la derecha/centro */
+    height: 15%;
+    width: 100%;
+    padding: 10px;
+}

@@ -1,16 +1,43 @@
-
 const listaHTML = document.getElementById('lista');
 const audioElement = document.getElementById('audio')
 const btnNext = document.getElementById('btnNext')
 const btnStop = document.getElementById('btnStop')
 const btnBack = document.getElementById('btnBack')
+
 const imgReproductor = document.getElementById('caratula')
 const titleReproductor = document.getElementById('title_reproductor_music')
+
+const imgReproductorExpandida = document.getElementById('caratula-expandida')
+const titleReproductorExpandido = document.getElementById('title-reproductor-music-expandido')
+
+
+const barraReproductor  = document.getElementById('barra_reproductor')
+
+const containerMain = document.getElementById("container")
+const containerCaratula = document.getElementById("container-caratula")
+const containerCaratulaExpandida = document.getElementById("container-caratula-expandida")
+const containerBtnsBotton = document.getElementById("botton-btns")
+const containerBtnsAdiccionales = document.getElementById("btns-adicionales")
+const btnHideReproductor = document.getElementById("btn-hide-reproductor")
 
 let postMusicSelected = 0
 let lengthCircularList = 0
 let stop = false
 const listaMusic = []
+
+const expandirReproductor = () => {
+    containerMain.classList.toggle('container-hide')
+    barraReproductor.classList.toggle("expandir-barra")
+
+    containerCaratula.classList.toggle("container-hide")
+    containerCaratulaExpandida.classList.toggle("container-hide")
+    containerCaratulaExpandida.classList.toggle("container-caratula-expandida")
+
+    containerBtnsAdiccionales.classList.toggle('container-hide')
+    containerBtnsBotton.classList.toggle("botton-btns-expandidos")
+}
+
+
 
 const reproducirMusic = (ruta) =>{
     try{
@@ -28,13 +55,18 @@ const reproducirMusic = (ruta) =>{
 const changeMusic = (pos = 0, click = false) =>{
     listaMusic[postMusicSelected].element.classList.remove("active")
     listaMusic[pos].element.classList.add('active')
+
     imgReproductor.src = listaMusic[pos].meta.image
-    titleReproductor.innerText = listaMusic[pos].meta.title
+    titleReproductor.innerText = listaMusic[pos].meta.title == "Título Desconocido"?listaMusic[pos].nameArchivo : listaMusic[pos].meta.title;
+    imgReproductorExpandida.src = listaMusic[pos].meta.image
+    titleReproductorExpandido.innerText = listaMusic[pos].meta.title == "Título Desconocido"?listaMusic[pos].nameArchivo : listaMusic[pos].meta.title;
+
     postMusicSelected = pos
     
     if(click) {
-      btnStop.innerHTML = window.api.Icons.STOP
-      stop = true
+        expandirReproductor()
+        btnStop.innerHTML = window.api.Icons.STOP
+        stop = true
     }
 }
 
@@ -106,12 +138,12 @@ const loadMusic = async () =>{
         listaMusic.push({
             element:li,
             ruta:`${ruta}/${archivo}`,
-            meta:meta
+            meta:meta,
+            nameArchivo:archivo
         })
     }
     lengthCircularList = listaMusic.length
 }
-
 
 loadMusic()
 
@@ -119,7 +151,60 @@ btnNext.addEventListener("click", nextMusic)
 btnStop.addEventListener('click',togleMusicAudio)
 btnBack.addEventListener('click', backMusic)
 audioElement.addEventListener("ended", nextMusic)
+btnHideReproductor.addEventListener("click", expandirReproductor)
+containerCaratula.addEventListener("click", expandirReproductor)
 
-btnStop.innerHTML = window.api.Icons.STOP
-btnNext.innerHTML = window.api.Icons.NEXT
-btnBack.innerHTML = window.api.Icons.BACK
+
+
+
+
+
+// NAVEGACION ENTRE PANTALLAS
+
+const titleContainerSelected = document.getElementById("title-selected")
+const menuContainer = {
+    home: document.getElementById("container_home"),
+    lista: document.getElementById("container_lista")
+}
+const btnsMenu = {
+    home: document.getElementById('btnHome'),
+    lista: document.getElementById("btnLista")
+}
+let btnMenuActive = btnsMenu.home
+let containerVisible = menuContainer.home
+
+
+btnsMenu.home.addEventListener('click',(event) => navigateMenu('home'));
+btnsMenu.lista.addEventListener('click', (event) => navigateMenu('lista'))
+
+
+const navigateMenu = (ruta = 'home') => {
+    const showContainer = (containerNew, btnNew, title) =>{
+        if(containerNew == containerVisible) return
+
+        titleContainerSelected.innerText = title
+
+        containerNew.classList.remove('container-hide');
+        containerVisible.classList.add('container-hide');
+        containerVisible = containerNew
+
+        btnNew.classList.add('item-active');
+        btnMenuActive.classList.remove('item-active')
+        btnMenuActive = btnNew
+
+    }
+    switch(ruta){
+        case "home":
+            showContainer(menuContainer.home, btnsMenu.home, "Home");
+            break;
+        case "lista":
+            showContainer(menuContainer.lista, btnsMenu.lista, "Lista de canciones");
+    }
+}
+
+
+
+
+
+
+
