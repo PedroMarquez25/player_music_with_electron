@@ -21,6 +21,7 @@
     "electron": "^43.3.0"
   },
   "dependencies": {
+    "electron-store": "^9.0.0",
     "music-metadata": "^11.14.0"
   }
 }

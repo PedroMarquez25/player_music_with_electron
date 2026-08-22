@@ -1,83 +1,106 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8" />
-  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" /> -->
-   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src 'self' data:;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src 'self' data:;" />
   <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src 'self' data:;" />
-  <title>Home</title>
+  <title>RealPlayer</title>
   <link rel="stylesheet" href="../styles/home.css">
 </head>
-
 <body class="container-windows">
   <div class="container" id="container">
-
     <div class="menu-lateral">
       <div class="item-title">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(229, 147, 34)" d="M91.2 36.9c-12.4-6.8-27.4-6.5-39.6 .7S32 57.9 32 72l0 368c0 14.1 7.5 27.2 19.6 34.4s27.2 7.5 39.6 .7l336-184c12.8-7 20.8-20.5 20.8-35.1s-8-28.1-20.8-35.1l-336-184z"/></svg>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+          <path fill="rgb(229, 147, 34)"
+            d="M91.2 36.9c-12.4-6.8-27.4-6.5-39.6 .7S32 57.9 32 72l0 368c0 14.1 7.5 27.2 19.6 34.4s27.2 7.5 39.6 .7l336-184c12.8-7 20.8-20.5 20.8-35.1s-8-28.1-20.8-35.1l-336-184z" />
+        </svg>
         <p class="title-menu">RP</p>
-        <!-- <p class="title-menu">RealPlayer</p> -->
       </div>
       <button class="item-menu item-active" id="btnHome">
-        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(255, 255, 255)" d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272l16 0 0 176c0 35.3 28.7 64 64 64l288 0c35.3 0 64-28.7 64-64l0-176 16 0c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1l-224-208zM240 320l32 0c26.5 0 48 21.5 48 48l0 96-128 0 0-96c0-26.5 21.5-48 48-48z"/></svg>
+        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+          <path fill="rgb(255, 255, 255)"
+            d="M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272l16 0 0 176c0 35.3 28.7 64 64 64l288 0c35.3 0 64-28.7 64-64l0-176 16 0c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1l-224-208zM240 320l32 0c26.5 0 48 21.5 48 48l0 96-128 0 0-96c0-26.5 21.5-48 48-48z" />
+        </svg>
         <p class="title-item">Home</p>
       </button>
       <button class="item-menu" id="btnLista">
-        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(255, 255, 255)" d="M468 7c7.6 6.1 12 15.3 12 25l0 304c0 44.2-43 80-96 80s-96-35.8-96-80 43-80 96-80c11.2 0 22 1.6 32 4.6l0-116.7-224 49.8 0 206.3c0 44.2-43 80-96 80s-96-35.8-96-80 43-80 96-80c11.2 0 22 1.6 32 4.6L128 96c0-15 10.4-28 25.1-31.2l288-64c9.5-2.1 19.4 .2 27 6.3z"/></svg>
-        <p class="title-item">Canciones</p>
+        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+          <path fill="rgb(255, 255, 255)"
+            d="M468 7c7.6 6.1 12 15.3 12 25l0 304c0 44.2-43 80-96 80s-96-35.8-96-80 43-80 96-80c11.2 0 22 1.6 32 4.6l0-116.7-224 49.8 0 206.3c0 44.2-43 80-96 80s-96-35.8-96-80 43-80 96-80c11.2 0 22 1.6 32 4.6L128 96c0-15 10.4-28 25.1-31.2l288-64c9.5-2.1 19.4 .2 27 6.3z" />
+        </svg>
+        <p class="title-item">Songs</p>
       </button>
     </div>
-
     <div class="container-main">
       <p class="title-selected" id="title-selected">Home</p>
-      
-      <div class="container-home" id="container_home"> 
-         <button>Seleccionar carpetas</button>
+      <div class="container-home" id="container_home">
+        <div class="temp-home">
+          <div class="container_select_directory">
+            <h3 class="title-item-home">Carpeta seleccionada</h3>
+            <p class="carpeta-selcted" id="carpeta-selcted">C:/Users/PC/Music: </p>
+            <ul class="archivos_ruta" id="archivos_ruta"></ul>
+            <button id="selectCarpeta" class="btnCambiarImg">Seleccionar carpetas</button>
+          </div>
+          <div class="container-imagen-user">
+            <h3 class="title-item-home">Imagen de usuario</h2>
+              <img id="img-user" class="img-user" src="../assets/Iron-man-endgame.jpg" alt="">
+              <button id="btnCambiarImg" class="btnCambiarImg">Cambiar imagen</button>
+          </div>
+        </div>
       </div>
-
       <div class="container-lista-canciones container-hide" id="container_lista">
-          <ul id="lista">
-          </ul>
+        <ul id="lista">
+        </ul>
       </div>
     </div>
-
   </div>
-
-  <div class="barra-reproductor" id="barra_reproductor">   
-        <div class="container-hide" id="container-caratula-expandida">
-            <button class="btn-hide-reproductor" id="btn-hide-reproductor">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(216, 146, 35)" d="M112 320C112 205.1 205.1 112 320 112C434.9 112 528 205.1 528 320C528 434.9 434.9 528 320 528C205.1 528 112 434.9 112 320zM576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576C461.4 576 576 461.4 576 320zM188.7 308.7C182.5 314.9 182.5 325.1 188.7 331.3L292.7 435.3C297.3 439.9 304.2 441.2 310.1 438.8C316 436.4 320 430.5 320 424L320 352L424 352C437.3 352 448 341.3 448 328L448 312C448 298.7 437.3 288 424 288L320 288L320 216C320 209.5 316.1 203.7 310.1 201.2C304.1 198.7 297.2 200.1 292.7 204.7L188.7 308.7z"/></svg>
-            </button>
-            <img src="../assets/Iron-man-endgame.jpg" alt="" id="caratula-expandida" class="caratula-expandida">
-            <p class="title-reproductor-music-expandido" id="title-reproductor-music-expandido"></p>
-        </div>
-
-        <audio class="audio" id="audio" src="" controls></audio>
-
-        <div class="botton-btns" id="botton-btns">
-          <div class="container-caratula" id="container-caratula">
-            <img src="../assets/Iron-man-endgame.jpg" alt="" id="caratula" class="caratula">
-            <p class="title-reproductor-music" id="title_reproductor_music"></p>
-          </div>
-
-          <div class="btns" id="btns">
-            <button class="btnBack" id="btnBack">
-                <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(255, 255, 255)" d="M363 36.8c-12.9-7-28.7-6.3-41 1.8L64 208.1 64 64c0-17.7-14.3-32-32-32S0 46.3 0 64L0 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144.1 258 169.6c12.3 8.1 28 8.8 41 1.8s21-20.5 21-35.2l0-368c0-14.7-8.1-28.2-21-35.2z"/></svg></button>
-            <button class="btnStop" id="btnStop">
-              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(255, 255, 255)" d="M48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48L48 32zm224 0c-26.5 0-48 21.5-48 48l0 352c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48l-64 0z"/></svg></button>
-            <button class="btnNext" id="btnNext">
-              <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(255, 255, 255)" d="M21 36.8c12.9-7 28.7-6.3 41 1.8L320 208.1 320 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 384c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-144.1-258 169.6c-12.3 8.1-28 8.8-41 1.8S0 454.7 0 440L0 72C0 57.3 8.1 43.8 21 36.8z"/></svg></button>
-          </div>  
-
-          <div class="btns-adicionales" id="btns-adicionales">
-          </div>
+  <div class="barra-reproductor" id="barra_reproductor">
+    <div class="container-hide" id="container-caratula-expandida">
+      <button class="btn-hide-reproductor" id="btn-hide-reproductor">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+          <path fill="rgb(216, 146, 35)"
+            d="M112 320C112 205.1 205.1 112 320 112C434.9 112 528 205.1 528 320C528 434.9 434.9 528 320 528C205.1 528 112 434.9 112 320zM576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576C461.4 576 576 461.4 576 320zM188.7 308.7C182.5 314.9 182.5 325.1 188.7 331.3L292.7 435.3C297.3 439.9 304.2 441.2 310.1 438.8C316 436.4 320 430.5 320 424L320 352L424 352C437.3 352 448 341.3 448 328L448 312C448 298.7 437.3 288 424 288L320 288L320 216C320 209.5 316.1 203.7 310.1 201.2C304.1 198.7 297.2 200.1 292.7 204.7L188.7 308.7z" />
+        </svg>
+      </button>
+      <img src="../assets/Iron-man-endgame.jpg" alt="" id="caratula-expandida" class="caratula-expandida">
+      <p class="title-reproductor-music-expandido" id="title-reproductor-music-expandido"></p>
+    </div>
+    <audio class="audio" id="audio" src="" controls></audio>
+    <div class="botton-btns" id="botton-btns">
+      <div class="container-caratula" id="container-caratula">
+        <img src="../assets/Iron-man-endgame.jpg" alt="" id="caratula" class="caratula">
+        <p class="title-reproductor-music" id="title_reproductor_music"></p>
       </div>
+
+      <div class="btns" id="btns">
+        <button class="btnBack" id="btnBack">
+          <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path fill="rgb(255, 255, 255)"
+              d="M363 36.8c-12.9-7-28.7-6.3-41 1.8L64 208.1 64 64c0-17.7-14.3-32-32-32S0 46.3 0 64L0 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144.1 258 169.6c12.3 8.1 28 8.8 41 1.8s21-20.5 21-35.2l0-368c0-14.7-8.1-28.2-21-35.2z" />
+          </svg></button>
+        <button class="btnStop" id="btnStop">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path fill="rgb(255, 255, 255)"
+              d="M48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48L48 32zm224 0c-26.5 0-48 21.5-48 48l0 352c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48l-64 0z" />
+          </svg></button>
+        <button class="btnNext" id="btnNext">
+          <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path fill="rgb(255, 255, 255)"
+              d="M21 36.8c12.9-7 28.7-6.3 41 1.8L320 208.1 320 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 384c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-144.1-258 169.6c-12.3 8.1-28 8.8-41 1.8S0 454.7 0 440L0 72C0 57.3 8.1 43.8 21 36.8z" />
+          </svg></button>
+      </div>
+      <div class="btns-adicionales" id="btns-adicionales">
+      </div>
+    </div>
   </div>
-  
 </body>
-
 <script src="../scripts/renderer.js"></script>
-
 </html>

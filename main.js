@@ -1,12 +1,15 @@
-const { app, BrowserWindow, ipcMain } = require('electron/main')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron/main');
+const { parseFile } = require('music-metadata');
 
 const path = require('path')
 const fs = require('fs').promises
-const { parseFile } = require('music-metadata');
-const { match } = require('assert');
+const Store = require('electron-store').default || require('electron-store');
+
+let store = new Store();
+let mainWindow;
 
 const createWindow = () => {
-  const win = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -14,21 +17,17 @@ const createWindow = () => {
     },
     autoHideMenuBar:true,
     minHeight: 500,
-    minWidth:700
+    minWidth:600
   })
-
-  win.loadFile('windows/index.html')
+  mainWindow.loadFile('windows/index.html')
 }
 
 
-ipcMain.handle('obtener-archivos', async (e, ruta = "C:/Users/PC/Music") => {
+ipcMain.handle('obtener-archivos', async (e, ruta) => {
   try {
-    const rutaCarpeta = ruta
-
-    // Leemos los archivos de la carpeta
-    const archivos = await fs.readdir(rutaCarpeta);
+    const archivos = await fs.readdir(ruta);
     
-    return {archivos, ruta}; // Retornamos la lista de archivos al renderizador
+    return {archivos, ruta};
   } catch (error) {
     console.error("Error al leer la carpeta:", error);
     return [];
@@ -37,19 +36,16 @@ ipcMain.handle('obtener-archivos', async (e, ruta = "C:/Users/PC/Music") => {
 
 ipcMain.handle('read-meta', async (e, ruta) => {
     try {
-        // Limpiar direccion de audio
         const cleanPath = ruta.replace(/\\/g, '/');
         
         // Lee todos los metadatos internos del archivo de forma nativa
         const metadata = await parseFile(cleanPath);
         
-        let imageUrl = path.join(__dirname, "assets/Iron-man-endgame.jpg")
+        let imageUrl = null
         let duration = '0:00'
 
-        // Si el mp3 tiene carátula (imagen) guardada adentro:
         if (metadata.common.picture && metadata.common.picture.length > 0) {
             const picture = metadata.common.picture[0];
-            // Puedes convertir la imagen binaria a base64 para mostrarla en un <img>
             const base64String = Buffer.from(picture.data).toString('base64');
             imageUrl = `data:${picture.format};base64,${base64String}`;
         }
@@ -62,19 +58,13 @@ ipcMain.handle('read-meta', async (e, ruta) => {
         }
 
         return {
-            // Datos de texto
             "title": metadata.common.title || "Título Desconocido",
             'artist': metadata.common.artist || "Artista Desconocido",
             "album": metadata.common.album || "Álbum Desconocido",
             'genre': metadata.common.genre || ["Desconocido"], // El género es un array
-
-            // Datos numéricos (usamos 0 si no existe duración)
             "duration": duration,
-
-            // Imagen (será null si no existe)
             'image': imageUrl
         };
-
     } catch (error) {
         console.error(`Ocurrio un error al extraer los metadatos de la cacion ${ruta}: ${error}`)
         return {
@@ -85,8 +75,39 @@ ipcMain.handle('read-meta', async (e, ruta) => {
             'genre': [],
             'image': null
         };
-    }
+  }
+});
+
+ipcMain.handle("dialog:open-directory", async (event, prop, filtros) =>{
+  const {canceled, filePaths} = await dialog.showOpenDialog(mainWindow, {
+    properties: [prop],
+    filters: [filtros]
   });
+
+  if (canceled) return null;
+  else return filePaths[0];
+})
+
+ipcMain.handle("store", async (event, method, data = {}) =>{
+    switch(method){
+      case "set":
+        store.set(data.key, data.value)
+        return "Dato guardado exitosamente"
+      case "get":
+        let value = store.get(data.key)
+        return value
+      case "delete":
+        store.delete(data.key)
+        return "Dato borrado exitosamente"
+      case "clear":
+        store.clear()
+        return "Datos borrados"
+      case "has":
+        return store.has(data.key)
+      default:
+        return null
+    }
+})
 
 
 app.whenReady().then(() => {
@@ -104,3 +125,4 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+

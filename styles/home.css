@@ -288,13 +288,87 @@
 
 /* Home */
 
-.home-container{
+.container-home{
     width: 100%;
     height: 100%;
-    background-color: var(--background-secondary);
     border-radius: 8px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    padding: 20px;
+}
+
+.temp-home{
+    display: flex;
+    justify-content:space-evenly;
+    gap: 50px;
+}
+
+.title-item-home{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:white;
+}
+
+.container-imagen-user{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+.img-user{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    padding-bottom: 5px;
+    object-fit: cover;
+}
+
+.btnCambiarImg{
+    color: var(--text_color);
+    border-radius: 8px;
+    background-color: var(--color_menu_lateral);
+    padding: 16px;
+    border: 0;
+
+    &:hover{
+        background-color: var(--resaltado);
+        cursor: pointer;
+    }
+}
+
+.container_select_directory{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 300px;
+    min-width: 80px;
+}
+
+
+.carpeta-selcted{
+    color: var(--resaltado);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: underline;
+}
+
+.ruta-home-archivos{
+    color: var(--resaltado);
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    white-space: nowrap;       
+    overflow: hidden;    
+    text-overflow: ellipsis;  
+}
+
+.archivos_ruta{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.text-warning{
+    color: red;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 /* Expandir barra reproductor */
@@ -304,28 +378,26 @@
 }
 
 .container-caratula-expandida{
-    height: 80%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 5px;
     align-items: center;
     justify-content: center;
 }
 
 .caratula-expandida{
-    height: 300px;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
+    height: 65vh;
     object-fit: cover;
-    margin-top: 32px;
 }
 
 .title-reproductor-music-expandido{
-    font-size: 25px;
-    padding: 40px;
+    font-size: 20px;
     color: var(--text_color);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+    height: 5vh;
 }
 
 .btn-hide-reproductor{
@@ -335,13 +407,23 @@
     height: 40px;
     border: 0;
     cursor: pointer;
+    height: 5vh;
 }
 
 .botton-btns-expandidos{
     display: flex;
     align-items: center; /* Centra verticalmente la carátula y los botones */
     justify-content: center; /* Empuja la carátula a la izquierda y los botones a la derecha/centro */
-    height: 15%;
+    height: 150px;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
+    height: 15vh;
+}
+
+.audio-expandido{
+    width: 100%;
+    filter: invert(1) hue-rotate(180deg);
+    border-radius: 0px;
+    opacity: .5;
+    height: 10vh;
 }
